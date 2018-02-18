@@ -18,7 +18,13 @@ class TestController extends Controller
     }
 
     public function add(Request $request){
-       Produit::create(['nom' => $request->input('nom'), 'quantite' => $request->input('number')]);
+        if ($request->input('number') <=0 || is_null($request->input('number'))){
+            Produit::create(['nom' => $request->input('nom'), 'quantite' => 1]);
+        }
+        else {
+            Produit::create(['nom' => $request->input('nom'), 'quantite' => $request->input('number')]);
+        }
+
         $title='Ma liste de course';
         $produits=Produit::all();
        return view('test', compact('title', 'produits'));

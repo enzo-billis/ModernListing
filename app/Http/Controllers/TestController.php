@@ -26,8 +26,6 @@ class TestController extends Controller
 
     public function remove(Request $request){
         Produit::where('id',$request->input('id'))->delete();
-        $title='Ma liste de course';
-        $produits=Produit::all();
-        return view('test', compact('title', 'produits'));
+        return redirect('/');
     }
 }

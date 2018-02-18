@@ -5,31 +5,70 @@
 
 
 @section('content')
-<h1>{{$title}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h1></h1>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{{asset("/img/logopng.png")}}">
+                <h1>{{$title}}</h1><p>
+            </div>
+            <div class="col-md-3">
+                <h1></h1>
+            </div>
+        </div>
+    </div>
 
-@forelse($produits as $produit)
-    <li>{{$produit->nom}} x {{$produit->quantite}} --- <form method="post" action="/delete"><input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="id" value="{{ $produit->id }}"><button type="submit" class="btn btn-primary"> Supprimer</button></form></li>
-@empty
-    <p>La liste est vide</p>
-@endforelse
+    <div class="container">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Produit</th>
+                    <th class="text-center">Quantité</th>
+                    <th class="text-center">Supprimer</th>
+                </tr>
+            </thead>
+            @forelse($produits as $produit)
+                <thead>
+                    <tr>
+                        <th class="text-center">{{$produit->nom}}</th>
+                        <th class="text-center">{{$produit->quantite}}</th>
+                        <th class="text-center"><form method="post" action="/delete"><input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="id" value="{{ $produit->id }}"><button type="submit" class="btn btn-primary"><img src="{{ asset('img/glyphicons-17-bin.png') }}"></button></form></th>
+                    </tr>
 
+                </thead>
+            @empty
+                <div class="alert alert-success "><strong>Enfin !</strong> La liste de course est vide.</div>
+            @endforelse
+        </table>
+    </div>
 @endsection
 
 
 
 
 @section('form')
-    <form method="post" action="/">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="form-group">
-            <label for="nom">Produit à ajouter</label>
-            <input type="text" class="form-control" name="nom" id="nom" placeholder="Exemple : Nutella">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 text-center">
+                <form method="post" action="/">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <label for="nom">Produit à ajouter</label>
+                        <input type="text" class="form-control text-center" name="nom" id="nom" placeholder="Exemple : Nutella">
 
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Quantité</label>
+                        <input type="number" class="form-control text-center" name="number" id="number" placeholder="Exemple : 1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
         </div>
-        <div class="form-group">
-            <label for="number">Quantité</label>
-            <input type="number" class="form-control" name="number" id="number" placeholder="Exemple : 1">
-        </div>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
+    </div>
+
 @endsection

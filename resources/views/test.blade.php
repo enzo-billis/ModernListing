@@ -17,7 +17,11 @@
             </div>
             <div class="col-md-6 text-center">
                 <img src="{{asset("/img/logopng.png")}}">
-                <h1>{{$title}}</h1><p>
+                </br>
+                </br>
+                <h1>{{$title}}</h1>
+
+                    </br>
             </div>
             <div class="col-md-3">
                 <h1></h1>
@@ -56,6 +60,11 @@
 
 
 @section('form')
+    </br>
+
+    <h1 class="text-center">Ajouter un produit au panier</h1>
+    </br>
+
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
@@ -63,7 +72,7 @@
                 <form method="post" action="/">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
-                        <label for="nom">Produit à ajouter</label>
+                        <label for="nom">Nom du produit</label>
                         <input type="text" class="form-control text-center" name="nom" id="nom" placeholder="Exemple : Nutella">
 
                     </div>

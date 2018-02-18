@@ -12,9 +12,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">Tableau de bored</div>
+                <div class="card-header">Tableau de bord</div>
 
-                <div class="card-body">
+                <div class="card-body text-center">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -22,6 +22,14 @@
                     @endif
 
                     Tu es connecté(e) !
+                        </br>
+                        </br>
+                        </br>
+                        <form action="/">
+                        <button type="submit" class="btn btn-primary">
+                            Voir la liste
+                        </button>
+                        </form>
                 </div>
             </div>
         </div>

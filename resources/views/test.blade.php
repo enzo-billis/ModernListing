@@ -43,7 +43,7 @@
                         <th class="text-center"><form method="post" action="/delete"><input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="id" value="{{ $produit->id }}"><button type="submit" class="btn btn-primary"><img src="{{ asset('img/glyphicons-17-bin.png') }}"></button></form></th>
                     </tr>
 
-                
+
             @empty
                 <div class="alert alert-success "><strong>Enfin !</strong> La liste de course est vide.</div>
             @endforelse

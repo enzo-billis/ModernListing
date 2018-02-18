@@ -13,15 +13,15 @@ use App\Produit;
 |
 */
 
-Route::get('/', 'TestController@index');
-Route::post('/delete', 'TestController@remove');
-Route::post('/', 'TestController@add');
+Route::get('/', 'TestController@index')->middleware('auth');
+Route::post('/delete', 'TestController@remove')->middleware('auth');
+Route::post('/', 'TestController@add')->middleware('auth');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/test', 'TestController@index');
+Route::get('/test', 'TestController@index')->middleware('auth');
 
 
-Route::post('/test/delete', 'TestController@remove');
-Route::post('/test', 'TestController@add');
+Route::post('/test/delete', 'TestController@remove')->middleware('auth');
+Route::post('/test', 'TestController@add')->middleware('auth');

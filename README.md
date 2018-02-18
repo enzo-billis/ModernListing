@@ -1,59 +1,47 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img src="https://courses.enzobillis.xyz/img/logopng.png"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<img src="https://travis-ci.org/{{username}}/{{project_name}}.png?branch={{branch}}" alt="Build Status">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+# ModernListing
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+ModernListing est mon premier projet sous le Framework Laravel. Ce site a pour but de centraliser une liste de course au sein d'une même famille.
+Ainsi, Kevin, 16 ans peut aisément demande (sans sortir de sa grotte) à ses parents d'acheter des canettes de boissons énergisante. Pratique non ?
+De plus, grâce au Framework l'installation est simple, sécurisée (Accès restreint par un espace utilisateur) et le tout est responsive (Oui oui, on peut y accéder depuis son mobile et en plus c'est joli ! )
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+# Demo
 
-## Learning Laravel
+[A VENIR]
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+## Fonctionnalités
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+- Espace connexion
+- Voir une liste de course
+- Ajouter des produits (Nom et quantité)
+- Les supprimer
 
-## Laravel Sponsors
+## Prérequis
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+- Serveur web (Apache, caddy...)
+- Php (Mais normalement si vous avez un serveur web c'est pas trop un soucis...)
+- Mysql
+- Composer (https://getcomposer.org/download/)
+- *[Optionnel] : Cmder, fortement recommandé pour windows (http://cmder.net/)*
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+## Installation
 
-## Contributing
+- Dans un premier temps, téléchargez le projet et mettez le dans un dossier. 
+- Dans ce dossier, ouvrez une invite de commande (Cmder c'est bien si vous êtes sur Windows) et lancer la commande ```composer update``` pour télécharger les dépendances **(On ne lance pas cette commande en root/SU !)**
+- Dans ce dossier créer un fichier **.env** et mettez à l'intérieur ce contenu : https://github.com/laravel/laravel/blob/master/.env.example
+- Créez une base de donnée vierge pour le site si ce n'est pas déjà fait.
+- Remplacez les lignes commençant par **DB_** en fonction des informations de connexion à votre base de donnée.
+- Dans le dossier du site ouvrez une invite de commande et taper la commande ```php artisan migrate``` (Si vous avez une erreur c'est que vos infos de connexion sont erronés, sinon vous devriez avoir 4 tables qui se crée (migrations, password_resets, produits et users)
+- Configurer votre serveur Web de façon à ce qu'il héberge le dossier et essayez d'y accéder depuis votre navigateur. (Si vous avez une erreur 500, mettez votre site en local et activez le debug mode pour régler le soucis.)
+- Normalement vous arrivez sur une page de connexion ! Pas d'inquiétude, vous n'avez juste pas encore de compte. Pour activer les inscriptions aller dans le fichier ```ressources/views/auth/register.blade.php``` et suivez les instructions sur les premières lignes **(N'oubliez pas de faire l'inverse après avoir crée votre compte si vous voulez pas avoir des petits malins qui gâche votre site !)**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Et voilà ! Votre liste de course est opérationnelle, vous avez autant de compte que voulu, il vous reste plus qu'a aller faire la queue dans un supermarché.

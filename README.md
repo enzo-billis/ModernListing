@@ -2,9 +2,8 @@
 
 <p align="center">
 <img src="https://travis-ci.org/{{username}}/{{project_name}}.png?branch={{branch}}" alt="Build Status">
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<img src="https://img.shields.io/github/downloads/enzo-billis/ModernListing/latest/total.svg" alt="Total Downloads">
+<img src="https://img.shields.io/github/release/enzo-billis/ModernListing.svg">
 </p>
 
 # ModernListing

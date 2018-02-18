@@ -2,7 +2,12 @@
 @section('title', $title)
 
 
-
+@section('head')
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+@endsection
 
 @section('content')
     <div class="container">
@@ -29,18 +34,20 @@
                     <th class="text-center">Supprimer</th>
                 </tr>
             </thead>
+            <tbody>
             @forelse($produits as $produit)
-                <thead>
+
                     <tr>
                         <th class="text-center">{{$produit->nom}}</th>
                         <th class="text-center">{{$produit->quantite}}</th>
                         <th class="text-center"><form method="post" action="/delete"><input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="id" value="{{ $produit->id }}"><button type="submit" class="btn btn-primary"><img src="{{ asset('img/glyphicons-17-bin.png') }}"></button></form></th>
                     </tr>
 
-                </thead>
+                
             @empty
                 <div class="alert alert-success "><strong>Enfin !</strong> La liste de course est vide.</div>
             @endforelse
+            </tbody>
         </table>
     </div>
 @endsection
